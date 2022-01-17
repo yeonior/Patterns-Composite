@@ -15,6 +15,7 @@
 		A29965302794A9BC00E50631 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A299652F2794A9BC00E50631 /* TableViewController.swift */; };
 		A2D38B5D2795930B0035BC39 /* Composite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D38B5C2795930B0035BC39 /* Composite.swift */; };
 		A2D38B5F279594AE0035BC39 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D38B5E279594AE0035BC39 /* File.swift */; };
+		A2D38B61279594D20035BC39 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D38B60279594D20035BC39 /* Folder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A299652F2794A9BC00E50631 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A2D38B5C2795930B0035BC39 /* Composite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composite.swift; sourceTree = "<group>"; };
 		A2D38B5E279594AE0035BC39 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		A2D38B60279594D20035BC39 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				A299651D2794A64A00E50631 /* SceneDelegate.swift */,
 				A2D38B5C2795930B0035BC39 /* Composite.swift */,
 				A2D38B5E279594AE0035BC39 /* File.swift */,
+				A2D38B60279594D20035BC39 /* Folder.swift */,
 				A299652F2794A9BC00E50631 /* TableViewController.swift */,
 				A29965212794A64A00E50631 /* Main.storyboard */,
 				A29965242794A64A00E50631 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 				A2D38B5D2795930B0035BC39 /* Composite.swift in Sources */,
 				A29965302794A9BC00E50631 /* TableViewController.swift in Sources */,
 				A299651E2794A64A00E50631 /* SceneDelegate.swift in Sources */,
+				A2D38B61279594D20035BC39 /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
