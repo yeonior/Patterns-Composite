@@ -10,6 +10,11 @@ import UIKit
 class TableViewController: UITableViewController {
     
     private var currentFolder: Composite = Folder(name: "Main")
+    private var tableVC: TableViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TableViewController") as? TableViewController
+        return vc!
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +59,12 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let contentArray = currentFolder.showContent() as? [Composite] else { fatalError("Cannot find content!")}
         
+        let item = contentArray[indexPath.row]
+        
+        tableVC.currentFolder = item
+        
+        item is Folder ? navigationController?.pushViewController(tableVC, animated: true) : print(item.name)
     }
 }
