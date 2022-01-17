@@ -8,6 +8,8 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+    
+    private var currentFolder: Composite = Folder(name: "Main")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,11 +17,19 @@ class TableViewController: UITableViewController {
         
     }
     
+    private func randomNumber() -> Int {
+        return Int.random(in: 1...1000)
+    }
+    
     @IBAction func folderBarButtonAction(_ sender: Any) {
+        let folder = Folder(name: "Folder #\(randomNumber())")
+        currentFolder.addComponent(folder)
         tableView.reloadData()
     }
     
     @IBAction func fileBarButtonAction(_ sender: Any) {
+        let file = File(name: "File #\(randomNumber())")
+        currentFolder.addComponent(file)
         tableView.reloadData()
     }
 
@@ -27,13 +37,18 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return currentFolder.countContent()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        // Configure the cell...
+        guard let contentArray = currentFolder.showContent() as? [Composite] else { fatalError("Cannot find content!")}
+        
+        let item = contentArray[indexPath.row]
+        cell.textLabel?.text = item.name
+        cell.detailTextLabel?.text = item is Folder ? "Folder" : "File"
+        cell.imageView?.image = item is Folder ? UIImage(systemName: "folder") : UIImage(systemName: "doc")
 
         return cell
     }

@@ -20,7 +20,7 @@ class File: Composite {
     }
     
     func addComponent(_ component: Composite) {
-        print("Cannot add a folder")
+        print("Cannot add a folder!")
     }
     
     func countContent() -> Int {
